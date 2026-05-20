@@ -1,6 +1,7 @@
 {
   "expo": {
     "name": "MD3 Widgets",
+    "owner": "ZayGo1ted",
     "slug": "md3-widgets",
     "version": "1.0.0",
     "orientation": "portrait",
