@@ -125,7 +125,7 @@ export async function widgetTaskHandler(props) {
             temp={state.weather_temp}
             condition={state.weather_condition}
             city={state.weather_city}
-            hourly={JSON.parse(state.weather_hourly)}
+            hourly={JSON.parse(state.weather_hourly || '[]')}
             theme={currentTheme}
           />
         );
@@ -185,10 +185,10 @@ export async function widgetTaskHandler(props) {
         );
         break;
       case 'NotesDark':
-        renderWidget(<NotesDarkWidget tasks={JSON.parse(state.todo_list)} theme={currentTheme} />);
+        renderWidget(<NotesDarkWidget tasks={JSON.parse(state.todo_list || '[]')} theme={currentTheme} />);
         break;
       case 'NotesLight':
-        renderWidget(<NotesLightWidget tasks={JSON.parse(state.todo_list)} theme={currentTheme} />);
+        renderWidget(<NotesLightWidget tasks={JSON.parse(state.todo_list || '[]')} theme={currentTheme} />);
         break;
       case 'TranslatorHistory':
         renderWidget(<TranslatorHistoryWidget theme={currentTheme} />);
@@ -313,10 +313,9 @@ export async function widgetTaskHandler(props) {
       } else if (clickAction === 'TOGGLE_FLASHLIGHT') {
          await setWidgetState('quick_settings_alarm', !state.quick_settings_alarm);
       } else if (clickAction === 'TOGGLE_TODO') {
-         const todoId = clickActionData?.id;
-         const todos = JSON.parse(state.todo_list);
+         const todoId = props.clickActionData?.id; // <--- FIX APPLIED HERE
+         const todos = JSON.parse(state.todo_list || '[]');
          const updatedTodos = todos.map(todo => {
-             // Support checking both string structure and state model structure
              if (todo.id === todoId) {
                  return { ...todo, completed: !todo.completed };
              }
@@ -387,7 +386,7 @@ export async function widgetTaskHandler(props) {
               temp={updatedState.weather_temp}
               condition={updatedState.weather_condition}
               city={updatedState.weather_city}
-              hourly={JSON.parse(updatedState.weather_hourly)}
+              hourly={JSON.parse(updatedState.weather_hourly || '[]')}
               theme={currentTheme}
             />
           );
@@ -414,10 +413,10 @@ export async function widgetTaskHandler(props) {
           );
           break;
         case 'NotesDark':
-          renderWidget(<NotesDarkWidget tasks={JSON.parse(updatedState.todo_list)} theme={currentTheme} />);
+          renderWidget(<NotesDarkWidget tasks={JSON.parse(updatedState.todo_list || '[]')} theme={currentTheme} />);
           break;
         case 'NotesLight':
-          renderWidget(<NotesLightWidget tasks={JSON.parse(updatedState.todo_list)} theme={currentTheme} />);
+          renderWidget(<NotesLightWidget tasks={JSON.parse(updatedState.todo_list || '[]')} theme={currentTheme} />);
           break;
         default:
           renderSelectedWidget();
