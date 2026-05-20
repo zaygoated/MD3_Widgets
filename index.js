@@ -1,11 +1,10 @@
+import { registerRootComponent } from 'expo';
 import { registerWidgetTaskHandler } from 'react-native-android-widget';
-import { AppRegistry } from 'react-native';
 import App from './App';
-import { name as appName } from './app.json';
 import { widgetTaskHandler } from './src/widgets/widgetTaskHandler';
 
-// Register the background widget task handler
+// Register the background widget task handler natively
 registerWidgetTaskHandler(widgetTaskHandler);
 
-// Register the main App component
-AppRegistry.registerComponent(appName, () => App);
+// Register the main App component safely using Expo's helper
+registerRootComponent(App);
