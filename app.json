@@ -1,0 +1,357 @@
+{
+  "expo": {
+    "name": "MD3 Widgets",
+    "slug": "md3-widgets",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#1C1B1F"
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#1C1B1F"
+      },
+      "package": "com.zayl.md3widgets"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "react-native-android-widget",
+        {
+          "widgets": [
+            {
+              "name": "MusicPlayerLarge",
+              "label": "Music Player (Large)",
+              "minWidth": "250dp",
+              "minHeight": "60dp",
+              "targetCellWidth": 4,
+              "targetCellHeight": 1,
+              "description": "Full-width music player with squiggly progress bar",
+              "resizeMode": "horizontal"
+            },
+            {
+              "name": "MusicPlayerMedium",
+              "label": "Music Player (Medium)",
+              "minWidth": "110dp",
+              "minHeight": "110dp",
+              "targetCellWidth": 2,
+              "targetCellHeight": 2,
+              "description": "Square music player with artwork",
+              "resizeMode": "horizontal|vertical"
+            },
+            {
+              "name": "MusicPlayerMini",
+              "label": "Music Player (Mini)",
+              "minWidth": "110dp",
+              "minHeight": "60dp",
+              "targetCellWidth": 2,
+              "targetCellHeight": 1,
+              "description": "Compact music playback control bar",
+              "resizeMode": "horizontal"
+            },
+            {
+              "name": "WeatherSmall",
+              "label": "Weather (Small)",
+              "minWidth": "60dp",
+              "minHeight": "60dp",
+              "targetCellWidth": 1,
+              "targetCellHeight": 1,
+              "description": "Current temperature and conditions icon",
+              "resizeMode": "horizontal|vertical"
+            },
+            {
+              "name": "WeatherMedium",
+              "label": "Weather (Medium)",
+              "minWidth": "110dp",
+              "minHeight": "60dp",
+              "targetCellWidth": 2,
+              "targetCellHeight": 1,
+              "description": "Horizontal weather card with brief forecast details",
+              "resizeMode": "horizontal"
+            },
+            {
+              "name": "WeatherLarge",
+              "label": "Weather (Large)",
+              "minWidth": "110dp",
+              "minHeight": "110dp",
+              "targetCellWidth": 2,
+              "targetCellHeight": 2,
+              "description": "Detailed weather widget with hourly forecast",
+              "resizeMode": "horizontal|vertical"
+            },
+            {
+              "name": "ClockDigital",
+              "label": "Clock (Digital)",
+              "minWidth": "110dp",
+              "minHeight": "60dp",
+              "targetCellWidth": 2,
+              "targetCellHeight": 1,
+              "description": "Digital clock with date in pill design",
+              "resizeMode": "horizontal"
+            },
+            {
+              "name": "ClockAnalog",
+              "label": "Clock (Analog)",
+              "minWidth": "60dp",
+              "minHeight": "60dp",
+              "targetCellWidth": 1,
+              "targetCellHeight": 1,
+              "description": "Clean analog clock with Montserrat Black fonts",
+              "resizeMode": "horizontal|vertical"
+            },
+            {
+              "name": "ClockAnalogLarge",
+              "label": "Clock (Analog Large)",
+              "minWidth": "110dp",
+              "minHeight": "110dp",
+              "targetCellWidth": 2,
+              "targetCellHeight": 2,
+              "description": "Large analog clock with date info",
+              "resizeMode": "horizontal|vertical"
+            },
+            {
+              "name": "ClockDate",
+              "label": "Clock (Date)",
+              "minWidth": "110dp",
+              "minHeight": "60dp",
+              "targetCellWidth": 2,
+              "targetCellHeight": 1,
+              "description": "Bold date display widget",
+              "resizeMode": "horizontal"
+            },
+            {
+              "name": "ClockWorld",
+              "label": "Clock (World)",
+              "minWidth": "180dp",
+              "minHeight": "60dp",
+              "targetCellWidth": 3,
+              "targetCellHeight": 1,
+              "description": "Multiple timezone world clock displays",
+              "resizeMode": "horizontal"
+            },
+            {
+              "name": "CalendarFull",
+              "label": "Calendar (Full)",
+              "minWidth": "180dp",
+              "minHeight": "110dp",
+              "targetCellWidth": 3,
+              "targetCellHeight": 2,
+              "description": "3x2 list of upcoming calendar events",
+              "resizeMode": "horizontal|vertical"
+            },
+            {
+              "name": "CalendarMini",
+              "label": "Calendar (Mini)",
+              "minWidth": "110dp",
+              "minHeight": "60dp",
+              "targetCellWidth": 2,
+              "targetCellHeight": 1,
+              "description": "Next event pill widget",
+              "resizeMode": "horizontal"
+            },
+            {
+              "name": "MapsSearch",
+              "label": "Maps Search Bar",
+              "minWidth": "250dp",
+              "minHeight": "60dp",
+              "targetCellWidth": 4,
+              "targetCellHeight": 1,
+              "description": "Google Maps style widget search bar",
+              "resizeMode": "horizontal"
+            },
+            {
+              "name": "Shortcuts",
+              "label": "Shortcuts Grid",
+              "minWidth": "110dp",
+              "minHeight": "110dp",
+              "targetCellWidth": 2,
+              "targetCellHeight": 2,
+              "description": "Quick action grid for quick settings/shortcuts",
+              "resizeMode": "horizontal|vertical"
+            },
+            {
+              "name": "NewsLight",
+              "label": "Google News (Light)",
+              "minWidth": "110dp",
+              "minHeight": "110dp",
+              "targetCellWidth": 2,
+              "targetCellHeight": 2,
+              "description": "Google News rss-feed card in light theme",
+              "resizeMode": "horizontal|vertical"
+            },
+            {
+              "name": "NewsDark",
+              "label": "Google News (Dark)",
+              "minWidth": "110dp",
+              "minHeight": "110dp",
+              "targetCellWidth": 2,
+              "targetCellHeight": 2,
+              "description": "Google News rss-feed card in dark theme",
+              "resizeMode": "horizontal|vertical"
+            },
+            {
+              "name": "Battery",
+              "label": "Battery status",
+              "minWidth": "60dp",
+              "minHeight": "60dp",
+              "targetCellWidth": 1,
+              "targetCellHeight": 1,
+              "description": "1x1 widget displaying battery level and circular arc progress",
+              "resizeMode": "horizontal|vertical"
+            },
+            {
+              "name": "QuickSettings",
+              "label": "Quick Settings Panel",
+              "minWidth": "180dp",
+              "minHeight": "110dp",
+              "targetCellWidth": 3,
+              "targetCellHeight": 2,
+              "description": "Functional settings toggles (WiFi, BT, Alarm, Flashlight)",
+              "resizeMode": "horizontal|vertical"
+            },
+            {
+              "name": "NotesDark",
+              "label": "Notes/Tasks (Dark)",
+              "minWidth": "110dp",
+              "minHeight": "110dp",
+              "targetCellWidth": 2,
+              "targetCellHeight": 2,
+              "description": "Scrollable/List notes in dark theme",
+              "resizeMode": "horizontal|vertical"
+            },
+            {
+              "name": "NotesLight",
+              "label": "Notes/Tasks (Light)",
+              "minWidth": "110dp",
+              "minHeight": "110dp",
+              "targetCellWidth": 2,
+              "targetCellHeight": 2,
+              "description": "Scrollable/List notes in light theme",
+              "resizeMode": "horizontal|vertical"
+            },
+            {
+              "name": "TranslatorHistory",
+              "label": "Translator History",
+              "minWidth": "110dp",
+              "minHeight": "180dp",
+              "targetCellWidth": 2,
+              "targetCellHeight": 3,
+              "description": "History list for quick translation",
+              "resizeMode": "horizontal|vertical"
+            },
+            {
+              "name": "Gaming",
+              "label": "Gaming Status",
+              "minWidth": "110dp",
+              "minHeight": "60dp",
+              "targetCellWidth": 2,
+              "targetCellHeight": 1,
+              "description": "Discord friends activity feed widget",
+              "resizeMode": "horizontal"
+            },
+            {
+              "name": "StorageRing",
+              "label": "Storage Ring",
+              "minWidth": "60dp",
+              "minHeight": "60dp",
+              "targetCellWidth": 1,
+              "targetCellHeight": 1,
+              "description": "Storage ring chart showing disk details",
+              "resizeMode": "horizontal|vertical"
+            },
+            {
+              "name": "CPUMonitor",
+              "label": "CPU & Memory Monitor",
+              "minWidth": "110dp",
+              "minHeight": "110dp",
+              "targetCellWidth": 2,
+              "targetCellHeight": 2,
+              "description": "Resource utilization charts",
+              "resizeMode": "horizontal|vertical"
+            },
+            {
+              "name": "Pomodoro",
+              "label": "Pomodoro Timer",
+              "minWidth": "60dp",
+              "minHeight": "60dp",
+              "targetCellWidth": 1,
+              "targetCellHeight": 1,
+              "description": "Productivity pomodoro widget",
+              "resizeMode": "horizontal|vertical"
+            },
+            {
+              "name": "HabitGrid",
+              "label": "Habit Grid",
+              "minWidth": "110dp",
+              "minHeight": "110dp",
+              "targetCellWidth": 2,
+              "targetCellHeight": 2,
+              "description": "Habit checklist grid",
+              "resizeMode": "horizontal|vertical"
+            },
+            {
+              "name": "VoiceMemo",
+              "label": "Voice Memo Bar",
+              "minWidth": "250dp",
+              "minHeight": "60dp",
+              "targetCellWidth": 4,
+              "targetCellHeight": 1,
+              "description": "Quick record voice widget",
+              "resizeMode": "horizontal"
+            },
+            {
+              "name": "StepCounter",
+              "label": "Step Counter",
+              "minWidth": "60dp",
+              "minHeight": "60dp",
+              "targetCellWidth": 1,
+              "targetCellHeight": 1,
+              "description": "Step goal tracking arc",
+              "resizeMode": "horizontal|vertical"
+            },
+            {
+              "name": "HeartRate",
+              "label": "Heart Rate",
+              "minWidth": "110dp",
+              "minHeight": "60dp",
+              "targetCellWidth": 2,
+              "targetCellHeight": 1,
+              "description": "Cardiovascular metrics monitoring",
+              "resizeMode": "horizontal"
+            },
+            {
+              "name": "NetworkSpeed",
+              "label": "Network Speed Monitor",
+              "minWidth": "110dp",
+              "minHeight": "60dp",
+              "targetCellWidth": 2,
+              "targetCellHeight": 1,
+              "description": "Upload and download speeds",
+              "resizeMode": "horizontal"
+            },
+            {
+              "name": "SleepTracker",
+              "label": "Sleep Tracker",
+              "minWidth": "110dp",
+              "minHeight": "110dp",
+              "targetCellWidth": 2,
+              "targetCellHeight": 2,
+              "description": "Sleep quality analysis and graph",
+              "resizeMode": "horizontal|vertical"
+            }
+          ]
+        }
+      ]
+    ]
+  }
+}
