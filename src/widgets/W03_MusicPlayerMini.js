@@ -83,13 +83,15 @@ export function MusicPlayerMiniWidget({ trackName, isPlaying, theme }) {
         />
       </FlexWidget>
 
-      <SvgWidget
-        svg={playPauseSvg}
-        style={{
-          width: 28,
-          height: 28,
-        }}
-      />
+      <FlexWidget clickAction="TOGGLE_PLAY" style={{ padding: 4 }}>
+        <SvgWidget
+          svg={playPauseSvg}
+          style={{
+            width: 28,
+            height: 28,
+          }}
+        />
+      </FlexWidget>
     </FlexWidget>
   );
 }

@@ -62,6 +62,8 @@ export function NotesLightWidget({ tasks, theme }) {
         {defaultTasks.map((task, idx) => (
           <FlexWidget
             key={idx}
+            clickAction="TOGGLE_TODO"
+            clickActionData={{ id: task.id || idx }}
             style={{
               flexDirection: 'row',
               alignItems: 'center',
@@ -70,7 +72,7 @@ export function NotesLightWidget({ tasks, theme }) {
           >
             <SvgWidget svg={getCheckSvg(task.checked)} style={{ width: 18, height: 18 }} />
             <TextWidget
-              text={task.title}
+              text={task.title || task.text}
               style={{
                 fontSize: 13,
                 color: task.checked ? currentTheme.onSurfaceVariant : currentTheme.onSurface,

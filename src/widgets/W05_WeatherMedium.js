@@ -52,6 +52,7 @@ export function WeatherMediumWidget({ temp, condition, city, feelsLike, humidity
 
   return (
     <FlexWidget
+      clickAction="REFRESH_WEATHER"
       style={{
         width: 'match_parent',
         height: 'match_parent',

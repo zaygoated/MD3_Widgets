@@ -28,6 +28,7 @@ export function ClockWorldWidget({ times, theme }) {
 
   return (
     <FlexWidget
+      clickAction="OPEN_CLOCK_APP"
       style={{
         width: 'match_parent',
         height: 'match_parent',

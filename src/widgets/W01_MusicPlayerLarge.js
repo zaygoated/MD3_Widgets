@@ -64,6 +64,7 @@ export function MusicPlayerLargeWidget({ trackName, artistName, isPlaying, progr
 
   return (
     <FlexWidget
+      clickAction="OPEN_APP"
       style={{
         width: 'match_parent',
         height: 'match_parent',
@@ -125,17 +126,31 @@ export function MusicPlayerLargeWidget({ trackName, artistName, isPlaying, progr
       <FlexWidget
         style={{
           flex: 0.8,
+          flexDirection: 'row',
           justifyContent: 'center',
           alignItems: 'center',
         }}
       >
-        <SvgWidget
-          svg={controlButtonsSvg}
-          style={{
-            width: 76,
-            height: 48,
-          }}
-        />
+        <FlexWidget clickAction="PREV_TRACK" style={{ padding: 8 }}>
+          <SvgWidget
+            svg={`<svg viewBox="0 0 40 40" width="24" height="24"><path d="M5 20v20l15-10zm20 0v20l15-10z" fill="${currentTheme.onSurface}" /></svg>`}
+            style={{ width: 24, height: 24 }}
+          />
+        </FlexWidget>
+
+        <FlexWidget clickAction="TOGGLE_PLAY" style={{ padding: 8, marginHorizontal: 4 }}>
+          <SvgWidget
+            svg={`<svg viewBox="0 0 60 60" width="48" height="48"><circle cx="30" cy="30" r="28" fill="${currentTheme.primaryContainer}" />${playing ? `<path d="M22 18h6v24h-6zM32 18h6v24h-6z" fill="${currentTheme.primary}" />` : `<path d="M22 16l20 14-20 14z" fill="${currentTheme.primary}" />`}</svg>`}
+            style={{ width: 48, height: 48 }}
+          />
+        </FlexWidget>
+
+        <FlexWidget clickAction="NEXT_TRACK" style={{ padding: 8 }}>
+          <SvgWidget
+            svg={`<svg viewBox="0 0 40 40" width="24" height="24"><path d="M35 20v20l-15-10zm-20 0v20l-15-10z" transform="rotate(180 20 30)" fill="${currentTheme.onSurface}" /></svg>`}
+            style={{ width: 24, height: 24 }}
+          />
+        </FlexWidget>
       </FlexWidget>
     </FlexWidget>
   );

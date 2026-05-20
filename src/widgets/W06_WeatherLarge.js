@@ -58,6 +58,7 @@ export function WeatherLargeWidget({ temp, condition, city, hourly, theme }) {
 
   return (
     <FlexWidget
+      clickAction="REFRESH_WEATHER"
       style={{
         width: 'match_parent',
         height: 'match_parent',

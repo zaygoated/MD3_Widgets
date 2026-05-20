@@ -64,6 +64,7 @@ export function QuickSettingsWidget({ wifiOn, bluetoothOn, flashlightOn, dndOn, 
       <FlexWidget style={{ flexDirection: 'row', justifyContent: 'space-between', flex: 1, marginBottom: 6 }}>
         {/* Wifi tile */}
         <FlexWidget
+          clickAction="TOGGLE_WIFI"
           style={{
             flex: 1,
             height: 'match_parent',
@@ -85,6 +86,7 @@ export function QuickSettingsWidget({ wifiOn, bluetoothOn, flashlightOn, dndOn, 
 
         {/* Bluetooth tile */}
         <FlexWidget
+          clickAction="TOGGLE_BT"
           style={{
             flex: 1,
             height: 'match_parent',
@@ -108,6 +110,7 @@ export function QuickSettingsWidget({ wifiOn, bluetoothOn, flashlightOn, dndOn, 
       <FlexWidget style={{ flexDirection: 'row', justifyContent: 'space-between', flex: 1 }}>
         {/* Flashlight tile */}
         <FlexWidget
+          clickAction="TOGGLE_FLASHLIGHT"
           style={{
             flex: 1,
             height: 'match_parent',
@@ -129,6 +132,7 @@ export function QuickSettingsWidget({ wifiOn, bluetoothOn, flashlightOn, dndOn, 
 
         {/* DND tile */}
         <FlexWidget
+          clickAction="TOGGLE_DND"
           style={{
             flex: 1,
             height: 'match_parent',

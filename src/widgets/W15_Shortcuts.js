@@ -1,7 +1,7 @@
 import React from 'react';
 import { FlexWidget, SvgWidget } from 'react-native-android-widget';
 
-export function ShortcutsWidget({ theme }) {
+export function ShortcutsWidget({ wifiEnabled, bluetoothEnabled, locationEnabled, theme }) {
   const currentTheme = theme || {
     surface: '#1C1B1F',
     primary: '#D0BCFF',
@@ -12,24 +12,28 @@ export function ShortcutsWidget({ theme }) {
     surfaceVariant: '#49454F',
   };
 
+  const isWifiOn = wifiEnabled !== undefined ? wifiEnabled : true;
+  const isBtOn = bluetoothEnabled !== undefined ? bluetoothEnabled : false;
+  const isLocOn = locationEnabled !== undefined ? locationEnabled : false;
+
   const wifiSvg = `
     <svg viewBox="0 0 100 100" width="32" height="32">
-      <path d="M50 80 A 6 6 0 1 1 50 79 Z" fill="${currentTheme.primary}" />
-      <path d="M30 60 A 28 28 0 0 1 70 60" fill="none" stroke="${currentTheme.primary}" stroke-width="6" stroke-linecap="round" />
-      <path d="M15 45 A 50 50 0 0 1 85 45" fill="none" stroke="${currentTheme.primary}" stroke-width="6" stroke-linecap="round" />
+      <path d="M50 80 A 6 6 0 1 1 50 79 Z" fill="${isWifiOn ? currentTheme.onPrimaryContainer : currentTheme.onSurface}" />
+      <path d="M30 60 A 28 28 0 0 1 70 60" fill="none" stroke="${isWifiOn ? currentTheme.onPrimaryContainer : currentTheme.onSurface}" stroke-width="6" stroke-linecap="round" />
+      <path d="M15 45 A 50 50 0 0 1 85 45" fill="none" stroke="${isWifiOn ? currentTheme.onPrimaryContainer : currentTheme.onSurface}" stroke-width="6" stroke-linecap="round" />
     </svg>
   `;
 
   const bluetoothSvg = `
     <svg viewBox="0 0 100 100" width="32" height="32">
-      <path d="M50 15 v70 L70 65 L30 35 L70 35 L30 65 Z" fill="none" stroke="${currentTheme.onSurface}" stroke-width="6" stroke-linejoin="round" stroke-linecap="round" />
+      <path d="M50 15 v70 L70 65 L30 35 L70 35 L30 65 Z" fill="none" stroke="${isBtOn ? currentTheme.onPrimaryContainer : currentTheme.onSurface}" stroke-width="6" stroke-linejoin="round" stroke-linecap="round" />
     </svg>
   `;
 
   const locationSvg = `
     <svg viewBox="0 0 100 100" width="32" height="32">
-      <path d="M50 15 A 25 25 0 0 1 75 40 C 75 60 50 85 50 85 C 50 85 25 60 25 40 A 25 25 0 0 1 50 15 Z" fill="none" stroke="${currentTheme.onSurface}" stroke-width="6" />
-      <circle cx="50" cy="40" r="8" fill="${currentTheme.onSurface}" />
+      <path d="M50 15 A 25 25 0 0 1 75 40 C 75 60 50 85 50 85 C 50 85 25 60 25 40 A 25 25 0 0 1 50 15 Z" fill="none" stroke="${isLocOn ? currentTheme.onPrimaryContainer : currentTheme.onSurface}" stroke-width="6" />
+      <circle cx="50" cy="40" r="8" fill="${isLocOn ? currentTheme.onPrimaryContainer : currentTheme.onSurface}" />
     </svg>
   `;
 
@@ -43,6 +47,7 @@ export function ShortcutsWidget({ theme }) {
 
   return (
     <FlexWidget
+      clickAction="OPEN_APP"
       style={{
         width: 'match_parent',
         height: 'match_parent',
@@ -55,10 +60,11 @@ export function ShortcutsWidget({ theme }) {
       <FlexWidget style={{ flexDirection: 'row', justifyContent: 'space-between', flex: 1 }}>
         {/* Wifi */}
         <FlexWidget
+          clickAction="TOGGLE_WIFI"
           style={{
             flex: 1,
             height: 'match_parent',
-            backgroundColor: currentTheme.primaryContainer,
+            backgroundColor: isWifiOn ? currentTheme.primaryContainer : currentTheme.surfaceVariant,
             borderRadius: 16,
             justifyContent: 'center',
             alignItems: 'center',
@@ -70,10 +76,11 @@ export function ShortcutsWidget({ theme }) {
 
         {/* Bluetooth */}
         <FlexWidget
+          clickAction="TOGGLE_BT"
           style={{
             flex: 1,
             height: 'match_parent',
-            backgroundColor: currentTheme.surfaceVariant,
+            backgroundColor: isBtOn ? currentTheme.primaryContainer : currentTheme.surfaceVariant,
             borderRadius: 16,
             justifyContent: 'center',
             alignItems: 'center',
@@ -87,10 +94,11 @@ export function ShortcutsWidget({ theme }) {
       <FlexWidget style={{ flexDirection: 'row', justifyContent: 'space-between', flex: 1 }}>
         {/* Location */}
         <FlexWidget
+          clickAction="TOGGLE_LOCATION"
           style={{
             flex: 1,
             height: 'match_parent',
-            backgroundColor: currentTheme.surfaceVariant,
+            backgroundColor: isLocOn ? currentTheme.primaryContainer : currentTheme.surfaceVariant,
             borderRadius: 16,
             justifyContent: 'center',
             alignItems: 'center',
@@ -102,6 +110,7 @@ export function ShortcutsWidget({ theme }) {
 
         {/* Battery */}
         <FlexWidget
+          clickAction="OPEN_BATTERY_SETTINGS"
           style={{
             flex: 1,
             height: 'match_parent',

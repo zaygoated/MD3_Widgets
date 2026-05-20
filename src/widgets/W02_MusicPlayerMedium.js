@@ -34,24 +34,12 @@ export function MusicPlayerMediumWidget({ trackName, artistName, isPlaying, prog
     </svg>
   `;
 
-  // Buttons SVG
-  const playPausePath = playing
-    ? `<path d="M16 12h4v16h-4zM24 12h4v16h-4z" fill="${currentTheme.onSurface}" />`
-    : `<path d="M16 12l12 8-12 8z" fill="${currentTheme.onSurface}" />`;
-
-  const playPauseSvg = `
-    <svg viewBox="0 0 44 40" width="36" height="32">
-      <!-- Back -->
-      <path d="M8 12v16l8-8z" fill="${currentTheme.onSurfaceVariant}" />
-      <!-- Center -->
-      ${playPausePath}
-      <!-- Next -->
-      <path d="M36 12v16l-8-8z" fill="${currentTheme.onSurfaceVariant}" />
-    </svg>
-  `;
+  const prevSvg = `<svg viewBox="0 0 20 20" width="16" height="16"><path d="M4 10v8l8-8z" fill="${currentTheme.onSurfaceVariant}" /></svg>`;
+  const nextSvg = `<svg viewBox="0 0 20 20" width="16" height="16"><path d="M16 10v8l-8-8z" fill="${currentTheme.onSurfaceVariant}" /></svg>`;
 
   return (
     <FlexWidget
+      clickAction="OPEN_APP"
       style={{
         width: 'match_parent',
         height: 'match_parent',
@@ -108,14 +96,20 @@ export function MusicPlayerMediumWidget({ trackName, artistName, isPlaying, prog
         }}
       />
 
-      <SvgWidget
-        svg={playPauseSvg}
-        style={{
-          width: 100,
-          height: 32,
-          marginTop: 4,
-        }}
-      />
+      <FlexWidget style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center', marginTop: 4 }}>
+        <FlexWidget clickAction="PREV_TRACK" style={{ padding: 8 }}>
+           <SvgWidget svg={prevSvg} style={{ width: 16, height: 16 }} />
+        </FlexWidget>
+        <FlexWidget clickAction="TOGGLE_PLAY" style={{ padding: 8, marginHorizontal: 12 }}>
+           <SvgWidget
+             svg={`<svg viewBox="0 0 32 32" width="28" height="28">${playing ? `<path d="M8 4h6v24h-6zM18 4h6v24h-6z" fill="${currentTheme.onSurface}" />` : `<path d="M10 4l16 12-16 12z" fill="${currentTheme.onSurface}" />`}</svg>`}
+             style={{ width: 28, height: 28 }}
+           />
+        </FlexWidget>
+        <FlexWidget clickAction="NEXT_TRACK" style={{ padding: 8 }}>
+           <SvgWidget svg={nextSvg} style={{ width: 16, height: 16 }} />
+        </FlexWidget>
+      </FlexWidget>
     </FlexWidget>
   );
 }
